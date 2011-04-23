@@ -15,6 +15,7 @@
     Tipsy.prototype = {
         show: function() {
             var title = this.getTitle();
+            if (this.options.div) title = $(this.options.div).html(); 
             if (title && this.enabled) {
                 var $tip = this.tip();
                 
@@ -57,7 +58,9 @@
                 }
                 
                 $tip.css(tp).addClass('tipsy-' + gravity);
-                
+                $tip.find('.tipsy-inner').addClass(this.options.div ? 'div' : 'title');
+                $tip.find('.tipsy-arrow').addClass(this.options.div ? 'div' : 'title');
+
                 if (this.options.fade) {
                     $tip.stop().css({opacity: 0, display: 'block', visibility: 'visible'}).animate({opacity: this.options.opacity});
                 } else {

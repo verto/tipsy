@@ -13,6 +13,8 @@
     $('#example-fallback').tipsy({fallback: "Where's my tooltip yo'?" });
     
     $('#example-html').tipsy({html: true });
+
+    $('#example-div').tipsy({html: true, div: '#example-div-content'});
     
   });
 </script>
@@ -153,6 +155,23 @@ an anchor tag's title attribute.</p>
 
 <div class='caption'>HTML example:</div>
 <div class='code'><pre>$('#example-html').tipsy({html: true });</pre></div>
+
+<!-- div content -->
+<p>If your tooltip content from div, set the
+  <code>div</code> option with css selector ex.<code>'#example-div-content'</code>:</p>
+
+<p>
+	<a id='example-div' href='#'>Hover over me</a>
+        <div id="example-div-content" style="display: none">
+            <div style="width: 300px; text-align: center">
+               <p>This is a example with div content</p>
+               <img src="jquery-logo.png"/>
+             </div>
+        </div>
+</p>
+
+<div class='caption'>DIV example:</div>
+<div class='code'><pre>$('#example-div').tipsy({div: '#example-div-content'});</pre></div>
 
   <!-- Delay -->
   
